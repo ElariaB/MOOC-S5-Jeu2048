@@ -1,42 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2048</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="Style.css">
-  <script src="Jeu2048.js"></script>
 </head>
 <body>
-<h1 class="titre-rouge" id="MJ">2048 LE JEU</h1>
-<div>
-  <h2 id="scoreid">Score = 0</h2>
+
+<div class="bg-glow bg-glow-1"></div>
+<div class="bg-glow bg-glow-2"></div>
+
+<div class="wrapper">
+
+  <header class="header">
+    <div class="title-block">
+      <h1 id="MJ">2048</h1>
+      <p class="subtitle">Fusionne les tuiles !</p>
+    </div>
+    <div class="stats">
+      <div class="stat-box">
+        <span class="stat-label">SCORE</span>
+        <span class="stat-value" id="scoreid">0</span>
+      </div>
+      <div class="stat-box best-box">
+        <span class="stat-label">MEILLEUR</span>
+        <span class="stat-value" id="bestid">0</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <button class="btn-new" onclick="startNewGame()">Nouvelle partie</button>
+    <div class="hint">↑ ↓ ← → pour jouer</div>
+  </div>
+
+  <div class="board-wrapper">
+    <div class="board-bg">
+      <div class="bg-cell"></div><div class="bg-cell"></div>
+      <div class="bg-cell"></div><div class="bg-cell"></div>
+      <div class="bg-cell"></div><div class="bg-cell"></div>
+      <div class="bg-cell"></div><div class="bg-cell"></div>
+      <div class="bg-cell"></div><div class="bg-cell"></div>
+      <div class="bg-cell"></div><div class="bg-cell"></div>
+      <div class="bg-cell"></div><div class="bg-cell"></div>
+      <div class="bg-cell"></div><div class="bg-cell"></div>
+    </div>
+    <table>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </table>
+
+    <div class="overlay" id="overlay">
+      <div class="overlay-content">
+        <p class="overlay-title" id="overlay-title"></p>
+        <p class="overlay-sub" id="overlay-sub"></p>
+        <button class="btn-new" onclick="startNewGame()">Rejouer</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<table>
-  <tr>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>6</td>
-    <td>7</td>
-    <td>8</td>
-  </tr>
-  <tr>
-    <td>9</td>
-    <td>10</td>
-    <td>11</td>
-    <td>12</td>
-  </tr>
-  <tr>
-    <td>13</td>
-    <td>14</td>
-    <td>15</td>
-    <td>16</td>
-  </tr>
-</table>
+<script src="Jeu2048.js"></script>
 </body>
 </html>
